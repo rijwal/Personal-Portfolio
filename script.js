@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
 
         {
-            title: "Robotics: Co-founder of FTC Team #24226 ",
+            title: "Robotics: Co-founder of FTC Team #24226 gang ",
             description: "On Team 24226, I am the co-founder of our school's robotics team which prioritized the development of a successful team whilst remaining inclusive and cost-friendly so students have greater access and opportunity to Robotics. After an unsuccessful start, our team worked even harder, spending hours every night to work on components of our robot. My team ended up qualifying to the Alberta Championship event (provincials), after finishing first place as alliance captains in the regional event,despite being a rookie team with limited resources. This was credited to the amount of hardwork myself and other members of the team put into our robot.",
             image: "FTCrobot.png"
         },
