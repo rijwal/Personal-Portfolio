@@ -23,6 +23,65 @@ document.querySelector('form')?.addEventListener('submit', function (e) {
     alert('Message sent successfully!');
     this.reset();
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const projects = [
+        {
+            title: "Academia Pro: Full-Stack Application",
+            description: "Academia Pro is a full-stack web application created for the FBLA-CNLC Programming Demonstration. The prompt was to develop an app that helps teachers better track student participation while encouraging students to engage in school events. The web application was built using the MERN stack, which includes Mongoose, Express, ReactJS, and NodeJS. To ensure secure user authentication, the application incorporates multiple security measures such as JSON Web Tokens, Redux Toolkit, and several middleware programs.",
+            image: "assets/images/project1.jpg"
+        },
+        {
+            title: "Alpha Racer: Game",
+            description: "Alpha Racer is a Car-Racing Game which implements python's pygame. The user is greeted with an introductory screen and begins the race shortly thereafter. The car starts at the beginning of the track and the user must make it past obstacles and a curved track to get to reach the finish line as fast as possible. The user is timed and the time is recorded and presented at the end of the game. Elements such as collision detection 2-D directional movements are present in this project. This was my introduction to object-oriented programming as I worked my way through concepts such as class structures, inheritance, and polymorphism. I expanded my previously built skils with syntax and data structures.",
+            video: "car.mp4"
+        },
+        {
+            title: "Youreka: Research Initiative",
+            description: "Youreka is a national research initiative in which 70+ teams participated wherein students were tasked to conduct research on mental health. My project interpreted datasets and utilized statistical tests on mice datasets provided by the University of Iowa, using R, to determine correlations between the effects of prenatal stress and an offspring's immune system. Through this project I gained proficiency in basic statistical concepts, including p-values, hypothesis testing, t-tests, and ANOVAs Received compensation for the strength of the project and published in the Canadian Youth Science Journal.",
+            image: "manuscript.png"
+        }
+        // Add more projects as needed
+    ];
+
+    const projectsList = document.getElementById('projects-list');
+
+    projects.forEach(project => {
+        const projectItem = document.createElement('div');
+        projectItem.className = 'project-item';
+
+        if (project.image) {
+            const projectImage = document.createElement('img');
+            projectImage.src = project.image;
+            projectImage.alt = project.title;
+            projectItem.appendChild(projectImage);
+        }
+
+        if (project.video) {
+            const projectVideo = document.createElement('video');
+            projectVideo.controls = true;
+            projectVideo.innerHTML = `<source src="${project.video}" type="video/mp4">`;
+            projectItem.appendChild(projectVideo);
+        }
+
+        const projectDetails = document.createElement('div');
+        projectDetails.className = 'project-details';
+
+        const projectTitle = document.createElement('h3');
+        projectTitle.className = 'project-title';
+        projectTitle.textContent = project.title;
+
+        const projectDescription = document.createElement('p');
+        projectDescription.className = 'project-description';
+        projectDescription.textContent = project.description;
+
+        projectDetails.appendChild(projectTitle);
+        projectDetails.appendChild(projectDescription);
+
+        projectItem.appendChild(projectDetails);
+
+        projectsList.appendChild(projectItem);
+    });
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     const achievements = [
@@ -80,4 +139,79 @@ document.addEventListener('DOMContentLoaded', function() {
 
         achievementsList.appendChild(item);
     });
+
+    const projects = [
+        {
+            title: "Project Title 1",
+            description: "Brief description of the project. Highlight key features and technologies used.",
+            image: "assets/images/project1.jpg"
+        },
+        {
+            title: "Project Title 2",
+            description: "Brief description of the project. Highlight key features and technologies used.",
+            image: "assets/images/project2.jpg"
+        },
+        {
+            title: "Project Title 3",
+            description: "Brief description of the project. Highlight key features and technologies used.",
+            image: "assets/images/project3.jpg"
+        }
+        // Add more projects as needed
+    ];
+
+    const projectsList = document.getElementById('projects-list');
+
+    projects.forEach(project => {
+        const projectItem = document.createElement('div');
+        projectItem.className = 'project-item';
+
+        const projectImage = document.createElement('img');
+        projectImage.src = project.image;
+        projectImage.alt = project.title;
+
+        const projectDetails = document.createElement('div');
+        projectDetails.className = 'project-details';
+
+        const projectTitle = document.createElement('h3');
+        projectTitle.className = 'project-title';
+        projectTitle.textContent = project.title;
+
+        const projectDescription = document.createElement('p');
+        projectDescription.className = 'project-description';
+        projectDescription.textContent = project.description;
+
+        projectDetails.appendChild(projectTitle);
+        projectDetails.appendChild(projectDescription);
+
+        projectItem.appendChild(projectImage);
+        projectItem.appendChild(projectDetails);
+
+        projectsList.appendChild(projectItem);
+    });
+
+});
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Replace with your actual EmailJS user ID, service ID, and template ID
+    const serviceID = 'service_lyane84';
+    const templateID = 'template_hcfqzlv';
+    const userID = 'hiW7yVWCEX2GWUOC3';
+
+    emailjs.init(userID);
+
+    const templateParams = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value,
+    };
+
+    emailjs.send(serviceID, templateID, templateParams)
+        .then(response => {
+            document.getElementById('response').textContent = 'Message sent successfully!';
+        })
+        .catch(error => {
+            document.getElementById('response').textContent = 'Failed to send message. Please try again later.';
+        });
 });
