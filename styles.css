@@ -36,7 +36,7 @@ a {
 
 .navbar img {
     width: 40%;
-    margin-left: -70px;
+    
 }
 
 .navbar-menu {
@@ -200,9 +200,9 @@ a {
 
 h2 {
     font-size: 2.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     padding-top: 120px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     text-align: center;
 }
 
@@ -336,7 +336,7 @@ h2 {
 
 .section4 {
     padding: 4rem 2rem;
-    max-width: 1500px;
+    max-width: 1000px;
 }
 
 .secton-container4{
@@ -348,11 +348,12 @@ h2 {
 
 .section4 p{
     color: #000;
+    font-size: 1rem;
 }
 
 .image1 {
     width: 30%;
-    margin-left: 1550px;
+    margin-left: 1050px;
     margin-top: -600px;
     padding-bottom: 120px;
 }
